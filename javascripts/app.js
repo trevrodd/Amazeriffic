@@ -1,5 +1,3 @@
-
-
 var main = function (toDoObjects) {
     "use strict";
 
@@ -81,18 +79,10 @@ var main = function (toDoObjects) {
 
                 $button.on("click", function () {
                     var description = $input.val(),
-                        tags = $tagInput.val().split(","),
-                        // create the new to-do item
-                        newToDo = {"description":description, "tags":tags};
+                        tags = $tagInput.val().split(",");
                                  
                     toDoObjects.push({"description":description, "tags":tags});
 
-                    // here we'll do a quick post to our todos route
-                    $.post("todos", newToDo, function (response) {
-                        console.log("We posted and the server responded!");
-                        console.log(response);
-                    });
-                    
                     // update toDos
                     toDos = toDoObjects.map(function (toDo) {
                         return toDo.description;
@@ -123,3 +113,4 @@ $(document).ready(function () {
         main(toDoObjects);
     });
 });
+
