@@ -33,6 +33,23 @@ h1 {
     width: 570px;
 }
 
+h2, h4, h6 {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+h3 {
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: 5px;
+    color: #999;;
+    background: #ddd;
+    padding: 5px;
+    margin: 20px 0 10px 0;
+}
+
+h3:first-child {
+    margin-top: 0;
+}
+
 h5 {
 	font-family: 'Ubuntu', sans-serif;
     font-size: 1.25em;
@@ -93,6 +110,10 @@ main .content p {
     background: yellow;
 }
 
+main .content p:first-child {
+    margin-top: 10px;
+}
+
 main .content input {
     font-size: 1.5em;
 }
@@ -105,6 +126,11 @@ footer  {
 footer .contact {
     float: left;
     width: 570px;    
+}
+
+footer .contact p:nth-child(2) {
+    color: #b33;
+    font-style: italic;
 }
 
 footer .sitemap {
