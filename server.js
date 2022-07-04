@@ -39,7 +39,7 @@ http.createServer(app).listen(3000);
 // This route takes the place of our
 // todos.json file in our example from
 // Chapter 5
-app.get("todos.json", function (req, res) {
+app.get("/todos.json", function (req, res) {
     res.json(toDos);
 });
 

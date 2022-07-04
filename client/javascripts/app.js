@@ -1,15 +1,18 @@
+
+
 var main = function (toDoObjects) {
     "use strict";
 
     var toDos = toDoObjects.map(function (toDo) {
-         
+          // we'll just return the description
+          // of this toDoObject
           return toDo.description;
     });
 
     $(".tabs a span").toArray().forEach(function (element) {
         var $element = $(element);
 
-       
+        // create a click handler for this element
         $element.on("click", function () {
             var $content,
                 $input,
@@ -82,16 +85,13 @@ var main = function (toDoObjects) {
                         // create the new to-do item
                         newToDo = {"description":description, "tags":tags};
                                  
-                    //toDoObjects.push({"description":description, "tags":tags});
+                    toDoObjects.push({"description":description, "tags":tags});
 
-                    
+                    // here we'll do a quick post to our todos route
                     $.post("todos", newToDo, function (response) {
-                        //console.log("We posted and the server responded!");
+                        console.log("We posted and the server responded!");
                         console.log(response);
-
-                        //wait to push new object
-                        toDoObjects.push(newToDo);
-                    
+                    });
                     
                     // update toDos
                     toDos = toDoObjects.map(function (toDo) {
@@ -101,7 +101,7 @@ var main = function (toDoObjects) {
                     $input.val("");
                     $tagInput.val("");
                 });
-            });
+
                 $content = $("<div>").append($inputLabel)
                                      .append($input)
                                      .append($tagLabel)
